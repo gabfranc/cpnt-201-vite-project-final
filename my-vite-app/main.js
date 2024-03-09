@@ -2,6 +2,15 @@ import '../css/style.css'
 import javascriptLogo from './images/javascript.svg'
 import viteLogo from './images/vite.svg'
 import { setupCounter } from '../js/counter'
+import { format } from 'date-fns'
+
+document.addEventListener('DOMContentLoaded', function() {
+  const date = document.getElementById('date');
+  const dateToday = new Date();
+  const dateFormat = format(dateToday, 'MMMM dd, yyyy');
+
+  date.textContent = "" + dateFormat;
+})
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -12,6 +21,8 @@ document.querySelector('#app').innerHTML = `
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
     <h1>Hello Vite!</h1>
+
+    <div> Today is: <span id="date"></span> </div>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
