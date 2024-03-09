@@ -3,6 +3,11 @@ import javascriptLogo from './images/javascript.svg'
 import viteLogo from './images/vite.svg'
 import { setupCounter } from '../js/counter'
 import { format } from 'date-fns'
+import _ from 'lodash'
+
+const array = [1, 2, 3, 4, 5];
+const numArray = _.map(array, num => num * num);
+console.log(numArray);
 
 document.addEventListener('DOMContentLoaded', function() {
   const date = document.getElementById('date');
@@ -22,7 +27,7 @@ document.querySelector('#app').innerHTML = `
     </a>
     <h1>Hello Vite!</h1>
 
-    <div> Today is: <span id="date"></span> </div>
+    <div> Today's date: <span id="date"></span> </div>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
